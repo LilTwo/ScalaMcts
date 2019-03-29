@@ -16,6 +16,10 @@ The four steps of MCTS correspond to the following method: <br/>
 <b>backpropagation</b>: normal_update, update_search_done(when an overwhelmed node encountered)<br/>
 <b>final decision</b>: vote, choose the child node with highest visit_count
 
+predict takes two arguments<br/>
+search_nodes means how many times these four steps are repeated.<br/>
+search_time have no use currently.
+
 <h3>Estimator</h3>
 The simulation step of MCTS is done in here, now I just have a simplest one: random play till end
 
@@ -24,4 +28,4 @@ Each subclass of Predict represents a type of players: Mcts, Random, Human. If a
 
 <h3>Main</h3>
 A game can be started at here, you can play with mcts, or have two MCTS play against each other.<br/>
-In the case of TicTacToe, two MCTS should draw everytime.
+In the case of TicTacToe, two MCTS should draw everytime when search_nodes is large enough.
