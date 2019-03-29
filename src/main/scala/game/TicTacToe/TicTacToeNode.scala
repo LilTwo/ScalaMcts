@@ -17,6 +17,7 @@ class TicTacToeNode(board: Array[Array[Int]], val cur_chair: Int) extends Node {
 
   override def make_move(move: Move): Node = {
     val TicTacToeMove(x, y) = move
+    if(board(y)(x) != 0 ) throw new Exception("illeagal move")
     val newBoard = Array.tabulate(3)(i => Array.tabulate(3)(j => board(i)(j)))
     newBoard(y)(x) = cur_chair
     new TicTacToeNode(newBoard, move_chair(cur_chair, 1))

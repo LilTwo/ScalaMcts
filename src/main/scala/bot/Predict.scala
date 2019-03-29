@@ -26,18 +26,15 @@ class RandomPredict extends Predict {
 }
 
 //
-//class HumanPredict extends Predict {
-//  def predict_moves_with_score(room: Room): Seq[(Move, Double, String)] = {
-//    println()
-//    println(s"counter: 3 4 5 6 7 8 9 T J Q K A 2")
-//    println(s"         ${room.get_hand(Chair.next(room.cur_chair)).cnt.zip(room.get_hand(Chair.prev(room.cur_chair)).cnt).map{ case (x, y) => x + y}.mkString(" ")}")
-//    println(s"pre_play: ${room.pre_play}; chair ${Chair.next(room.cur_chair)} has ${room.get_hand(Chair.next(room.cur_chair)).left}, chair ${Chair.prev(room.cur_chair)} has ${room.get_hand(Chair.prev(room.cur_chair)).left}")
-//    println(s"your hand: ${room.get_hand(room.cur_chair)}")
-//    print("enter your move: ")
-//    val move = Moves.parse(scala.io.StdIn.readLine())
-//    Seq((move, 1, "human play"))
-//  }
-//}
+class TicTacToeHumanPredict extends Predict {
+  def predict_moves_with_score(node: Node): Seq[(Move, Double, String)] = {
+    import game.TicTacToe.TicTacToeMove.seq2move
+    println("player's turn")
+    node.print_game
+    val move = scala.io.StdIn.readLine().split("\\s+").map(_.toInt)
+    Seq((seq2move(move), 1, "human play"))
+  }
+}
 //
 class MctsPredict(search_nodes:Int = 500) extends Predict {
   def predict_moves_with_score(room: Node): Seq[(Move, Double, String)] = {

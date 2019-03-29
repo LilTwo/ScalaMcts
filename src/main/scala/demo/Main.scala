@@ -22,8 +22,8 @@ object Main extends App {
 
   val start = System.currentTimeMillis()
   val players = Map(
-    1 -> new MctsPredict(500),
-    -1 -> new MctsPredict(500)
+    1 -> new MctsPredict(),
+    -1 -> new TicTacToeHumanPredict()
   )
   val winner = collection.mutable.HashMap[Int,Int]()
   val count = 500
