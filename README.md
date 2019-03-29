@@ -7,7 +7,7 @@ TicTacToe.<br/>
 New games can be added by writing new classes that extend Node.
 
 ## Mcts
-Monte carlo tree search is implemented in this class.
+The search logic of MCTS is implemented in this class.
 The four steps of MCTS correspond to the following method: <br/>
 
 <b>selection</b>: select_and_expand<br/>
