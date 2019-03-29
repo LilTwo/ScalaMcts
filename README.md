@@ -12,7 +12,7 @@ The four steps of MCTS correspond to the following method: <br/>
 
 <b>selection</b>: select_and_expand<br/>
 <b>expansion</b>: select_and_expand<br/>
-<b>simulation</b>: done by variable called estimator with type <b>Node => Map[Int, Double]</b><br/>
+<b>simulation</b>: done by a variable called estimator with type <b>Node => Map[Int, Double]</b><br/>
 <b>backpropagation</b>: normal_update, update_search_done(when an overwhelmed node encountered)<br/>
 <b>final decision</b>: vote, choose the child node with highest visit_count
 
@@ -21,7 +21,7 @@ search_nodes means how many times these four steps are repeated.<br/>
 search_time have no use currently.
 
 <h3>Estimator</h3>
-The simulation step of MCTS is done in here, now I just have a simplest one: random play till end
+The simulation step of MCTS is done in here, now I just have a simplest one: random play till end.
 
 <h3>Predict</h3>
 Each subclass of Predict represents a type of players: Mcts, Random, Human. If a HumanPredict is used, the user can type the input via stdin when it's user's turn.
