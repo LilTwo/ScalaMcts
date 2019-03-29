@@ -1,12 +1,12 @@
-##Scala implementation of Monte Carlo Tree Search
+## Scala implementation of Monte Carlo Tree Search
 
 
-##Node
+## Node
 A single game state is represented by an instance of this trait, now there is only one kind of game: 
 TicTacToe.<br/>
 New games can be added by writing new classes that extend Node.
 
-##Mcts
+## Mcts
 Monte carlo tree search is implemented in this class.
 The four steps of MCTS correspond to the following method: <br/>
 
@@ -20,12 +20,12 @@ predict takes two arguments<br/>
 search_nodes means how many times these four steps are repeated.<br/>
 search_time have no use currently.
 
-##Estimator
+## Estimator
 The simulation step of MCTS is done in here, now I just have a simplest one: random play till end
 
-##Predict
+## Predict
 Each subclass of Predict represents a type of players: Mcts, Random, Human. If a HumanPredict is used, the user can type the input via stdin when it's user's turn.
 
-##Main
+## Main
 A game can be started at here, you can play with mcts, or have two MCTS play against each other.<br/>
 In the case of TicTacToe, two MCTS should draw everytime when search_nodes is large enough.
